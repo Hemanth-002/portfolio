@@ -2,6 +2,7 @@
 
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import Hero from "@/components/Hero";
+import { Navbar, Footer } from "@/components";
 import Contibutions from "@/components/Contibutions";
 
 const GlobalStyle = createGlobalStyle`
@@ -39,8 +40,10 @@ export default function Home() {
   return (
     <main>
       <ThemeProvider theme={theme}>
+        <Navbar />
         <Hero />
         <Contibutions />
+        <Footer />
         <GlobalStyle />
       </ThemeProvider>
     </main>
