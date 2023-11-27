@@ -4,21 +4,23 @@ import { ThemeProvider, createGlobalStyle } from "styled-components";
 import Hero from "@/components/Hero";
 import { Navbar, Footer } from "@/components";
 import Contibutions from "@/components/Contibutions";
+import Projects from "@/components/Projects";
 
 const GlobalStyle = createGlobalStyle`
   html,
   body {
     margin: 1rem;
     padding: 0;
-    background: #000000;
+    /* background: #0e1117; */
     font-family: Open-Sans, Helvetica, Sans-Serif;
-    color: #ffff;
+    /* color: #ffff; */
     font-size: 16px;
 
     @media (max-width: 768px) {
       font-size: 12px;
       padding: 0;
     }
+  }
 `;
 
 const theme = {
@@ -43,6 +45,7 @@ export default function Home() {
         <Navbar />
         <Hero />
         <Contibutions />
+        <Projects />
         <Footer />
         <GlobalStyle />
       </ThemeProvider>

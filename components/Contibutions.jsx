@@ -2,6 +2,7 @@ import React from "react";
 import { styled } from "styled-components";
 
 const ImageWrapper = styled.div`
+  margin-bottom: 3rem;
   @media (max-width: 768px) {
     overflow-x: auto;
   }
@@ -19,7 +20,6 @@ const Contibutions = () => {
   return (
     <ImageWrapper>
       <Image
-        fill
         src="https://ghchart.rshah.org/hemanth-002"
         alt="Name Your Github chart"
       />

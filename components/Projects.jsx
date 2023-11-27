@@ -1,5 +1,7 @@
+import { projects } from "@/constants/constants";
 import React from "react";
 import { styled } from "styled-components";
+import Card from "./Card";
 
 const Wrapper = styled.div`
   display: flex;
@@ -13,8 +15,14 @@ const Wrapper = styled.div`
   }
 `;
 
-const Footer = () => {
-  return <Wrapper></Wrapper>;
+const Projects = () => {
+  return (
+    <Wrapper>
+      {projects?.map((item, idx) => (
+        <Card data={item} key={idx} />
+      ))}
+    </Wrapper>
+  );
 };
 
-export default Footer;
+export default Projects;
