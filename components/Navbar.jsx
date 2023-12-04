@@ -8,6 +8,7 @@ import { AiFillLinkedin } from "react-icons/ai";
 import { SiLeetcode } from "react-icons/si";
 import { BiPhoneCall } from "react-icons/bi";
 import { FiPackage } from "react-icons/fi";
+import { FaGithub } from "react-icons/fa6";
 
 const Wrapper = styled.div`
   display: flex;
@@ -54,7 +55,7 @@ const Navbar = () => {
   return (
     <Wrapper>
       <SubWrapper>
-        <Image src="/github.svg" alt="GitHub Logo" />
+        <FaGithub size={60} />
         <ListBar>
           <Title>
             <AiFillLinkedin size={40} />

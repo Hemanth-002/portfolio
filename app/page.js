@@ -11,9 +11,9 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 1rem;
     padding: 0;
-    /* background: #0e1117; */
+    background: #0e1117;
     font-family: Open-Sans, Helvetica, Sans-Serif;
-    /* color: #ffff; */
+    color: #ffff;
     font-size: 16px;
 
     @media (max-width: 768px) {
