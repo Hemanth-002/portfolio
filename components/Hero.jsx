@@ -27,7 +27,7 @@ const Title = styled.div`
 const SubTitle = styled.div`
   font-size: 2.5rem;
   font-weight: 200;
-  color: #c2c2c2;
+  color: ${(props) => props.theme.colors.subText};
 `;
 
 const SubText = styled.div`
@@ -39,7 +39,7 @@ const SubText = styled.div`
   p {
     font-size: 1.5rem;
     font-weight: 200;
-    color: #c2c2c2;
+    color: ${(props) => props.theme.colors.subText};
   }
   @media (max-width: 768px) {
     width: 100%;

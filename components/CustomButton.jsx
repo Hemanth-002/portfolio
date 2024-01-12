@@ -2,7 +2,8 @@ import React from "react";
 import { styled } from "styled-components";
 
 export const Button = styled.button`
-  background: #ffff;
+  background: ${(props) => props.theme.colors.buttonColor};
+  color: ${(props) => props.theme.colors.buttonText};
   border: none;
   cursor: pointer;
   border-radius: 0.5rem;
@@ -19,4 +20,3 @@ const CustomButton = ({ title }) => {
 };
 
 export default CustomButton;
-

@@ -8,6 +8,7 @@ import { AiFillLinkedin } from "react-icons/ai";
 import { SiLeetcode } from "react-icons/si";
 import { BiPhoneCall } from "react-icons/bi";
 import { FiPackage } from "react-icons/fi";
+import { MdOutlineLightMode, MdOutlineDarkMode } from "react-icons/md";
 import { FaGithub } from "react-icons/fa6";
 
 const Wrapper = styled.div`
@@ -42,16 +43,7 @@ const Title = styled.a`
   gap: 0.25rem;
 `;
 
-const Image = styled.img`
-  width: 4rem;
-  height: 4rem;
-  @media (max-width: 768px) {
-    width: 3rem;
-    height: 3rem;
-  }
-`;
-
-const Navbar = () => {
+const Navbar = ({ theme, toggleTheme }) => {
   return (
     <Wrapper>
       <SubWrapper>
@@ -62,6 +54,13 @@ const Navbar = () => {
           </Title>
           <Title>
             <SiLeetcode size={35} />
+          </Title>
+          <Title onClick={() => toggleTheme()}>
+            {theme === "light" ? (
+              <MdOutlineLightMode size={35} />
+            ) : (
+              <MdOutlineDarkMode size={35} />
+            )}
           </Title>
         </ListBar>
       </SubWrapper>

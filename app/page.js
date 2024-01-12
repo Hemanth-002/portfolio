@@ -5,16 +5,18 @@ import Hero from "@/components/Hero";
 import { Navbar, Footer } from "@/components";
 import Contibutions from "@/components/Contibutions";
 import Projects from "@/components/Projects";
+import { useState } from "react";
 
 const GlobalStyle = createGlobalStyle`
   html,
   body {
     margin: 1rem;
     padding: 0;
-    background: #0e1117;
     font-family: Open-Sans, Helvetica, Sans-Serif;
-    color: #ffff;
     font-size: 16px;
+    transition: background 0.5s ease, color 0.3s ease;
+    background: ${(props) => props.theme.colors.background};
+    color: ${(props) => props.theme.colors.text};
 
     @media (max-width: 768px) {
       font-size: 12px;
@@ -24,25 +26,53 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const theme = {
-  colors: {
-    powderWhite: "#FFFDF9",
-    persianGreen: "#06B49A",
-    lightBlue: "#AFDBD2",
-    onyx: "#36313D",
+  light: {
+    colors: {
+      background: "#FFFDF9",
+      text: "#36313D",
+      subText: "#646262",
+      buttonColor: '#555',
+      buttonText: '#ffffff',
+      persianGreen: "#06B49A",
+      lightBlue: "#AFDBD2",
+      onyx: "#36313D",
+    },
+    fonts: ["sans-serif", "Roboto"],
+    fontSizes: {
+      small: "1em",
+      medium: "2em",
+      large: "3em",
+    },
   },
-  fonts: ["sans-serif", "Roboto"],
-  fontSizes: {
-    small: "1em",
-    medium: "2em",
-    large: "3em",
+  dark: {
+    colors: {
+      background: "#0e1117",
+      text: "#FFFDF9",
+      subText: "#c2c2c2",
+      persianGreen: "#06B49A",
+      lightBlue: "#AFDBD2",
+      onyx: "#36313D",
+    },
+    fonts: ["sans-serif", "Roboto"],
+    fontSizes: {
+      small: "1em",
+      medium: "2em",
+      large: "3em",
+    },
   },
 };
 
 export default function Home() {
+  const [currentTheme, setCurrentTheme] = useState("light");
+
+  const toggleTheme = () => {
+    setCurrentTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+  };
+
   return (
     <main>
-      <ThemeProvider theme={theme}>
-        <Navbar />
+      <ThemeProvider theme={theme[currentTheme]}>
+        <Navbar toggleTheme={toggleTheme} theme={currentTheme} />
         <Hero />
         <Contibutions />
         <Projects />

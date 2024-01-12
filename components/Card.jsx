@@ -30,7 +30,7 @@ const Name = styled.p`
 `;
 
 const TechStack = styled.p`
-  font-weight: 100;
+  font-weight: 500;
 `;
 
 const Card = ({ data }) => {
