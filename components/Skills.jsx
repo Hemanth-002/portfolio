@@ -8,11 +8,11 @@ const Wrapper = styled.div`
   flex-direction: row;
   justify-content: space-around;
   gap: 1rem;
-  margin: 2rem 0;
+  margin: 2rem 1.5rem;
 `;
 
 export const SubWrapper = styled.div`
-  margin: 2rem 4rem;
+  margin: 4rem 4rem;
 `;
 
 export const SubText = styled.a`
@@ -42,7 +42,7 @@ const Component = ({ link }) => (
 );
 
 const LinkComponent = () => (
-  <SubWrapper>
+  <SubWrapper id="skills">
     <h2>Languages and Tools</h2>
     <Wrapper>
       {links.map((link, index) => (

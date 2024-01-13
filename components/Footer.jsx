@@ -43,32 +43,30 @@ const FooterWrap = styled.div`
 
 const Footer = () => {
   return (
-    <>
-      <Wrapper>
-        <h2>Contact Information</h2>
-        <div>
-          Email: <Link href="#">hemanth.savaram02@gmail.com</Link>
-        </div>
-        <div>
-          Phone: <Link href="#">+91 7675809162</Link>
-        </div>
-        <SubWrapper>
-          <Title
-            href="https://www.linkedin.com/in/hemanthsairam/"
-            target="_blank"
-          >
-            <AiFillLinkedin size={40} />
-          </Title>
-          <Title href="https://github.com/Hemanth-002/" target="_blank">
-            <FaGithub size={40} />
-          </Title>
-          <Title href="https://leetcode.com/Humanth/" target="_blank">
-            <SiLeetcode size={35} />
-          </Title>
-        </SubWrapper>
-        <FooterWrap> © 2024 Hemanth Sairam. All rights reserved.</FooterWrap>
-      </Wrapper>
-    </>
+    <Wrapper id="contact">
+      <h2>Contact Information</h2>
+      <div>
+        Email: <Link href="#">hemanth.savaram02@gmail.com</Link>
+      </div>
+      <div>
+        Phone: <Link href="#">+91 7675809162</Link>
+      </div>
+      <SubWrapper>
+        <Title
+          href="https://www.linkedin.com/in/hemanthsairam/"
+          target="_blank"
+        >
+          <AiFillLinkedin size={40} />
+        </Title>
+        <Title href="https://github.com/Hemanth-002/" target="_blank">
+          <FaGithub size={40} />
+        </Title>
+        <Title href="https://leetcode.com/Humanth/" target="_blank">
+          <SiLeetcode size={35} />
+        </Title>
+      </SubWrapper>
+      <FooterWrap> © 2024 Hemanth Sairam. All rights reserved.</FooterWrap>
+    </Wrapper>
   );
 };
 

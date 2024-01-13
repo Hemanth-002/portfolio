@@ -28,7 +28,7 @@ const SubTitle = styled.p`
 
 const Education = () => {
   return (
-    <SubWrapper>
+    <SubWrapper id="education">
       <h2>Education</h2>
       {education?.map((e) => (
         <ExpWrapper key={e.id}>

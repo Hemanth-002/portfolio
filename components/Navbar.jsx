@@ -1,5 +1,6 @@
 import React from "react";
 import { styled } from "styled-components";
+import { Link as ScrollLink } from "react-scroll";
 import { FiBookOpen } from "react-icons/fi";
 import { MdWorkOutline } from "react-icons/md";
 import { CgWebsite } from "react-icons/cg";
@@ -37,6 +38,14 @@ const ListBar = styled.div`
   padding-bottom: 0.5rem;
 `;
 
+export const ScrollTitle = styled(ScrollLink)`
+  display: flex;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  gap: 0.25rem;
+`;
+
 export const Title = styled.a`
   display: flex;
   text-decoration: none;
@@ -44,6 +53,7 @@ export const Title = styled.a`
   cursor: pointer;
   gap: 0.25rem;
 `;
+
 const Navbar = ({ theme, toggleTheme }) => {
   return (
     <Wrapper>
@@ -72,30 +82,31 @@ const Navbar = ({ theme, toggleTheme }) => {
         </ListBar>
       </SubWrapper>
       <ListBar>
-        <Title>
+        <ScrollTitle to="about" smooth={true} duration={500}>
           <FiBookOpen size={20} />
           About
-        </Title>
-        <Title>
-          <MdWorkOutline size={20} />
-          Work Experiences
-        </Title>
-        <Title>
-          <PiGraduationCap size={20} />
-          Education
-        </Title>
-        <Title>
-          <FiPackage size={20} />
-          Skills
-        </Title>
-        <Title>
+        </ScrollTitle>
+        <ScrollTitle to="projects" smooth={true} duration={500}>
           <CgWebsite size={20} />
           Projects
-        </Title>
-        <Title>
+        </ScrollTitle>
+        <ScrollTitle to="skills" smooth={true} duration={500}>
+          <FiPackage size={20} />
+          Skills
+        </ScrollTitle>
+        <ScrollTitle to="experience" smooth={true} duration={500}>
+          <MdWorkOutline size={20} />
+          Work Experiences
+        </ScrollTitle>
+        <ScrollTitle to="education" smooth={true} duration={500}>
+          <PiGraduationCap size={20} />
+          Education
+        </ScrollTitle>
+
+        <ScrollTitle to="contact" smooth={true} duration={500}>
           <BiPhoneCall size={20} />
           Get in touch
-        </Title>
+        </ScrollTitle>
       </ListBar>
     </Wrapper>
   );

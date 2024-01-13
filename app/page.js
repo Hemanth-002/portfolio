@@ -69,7 +69,7 @@ const theme = {
 };
 
 export default function Home() {
-  const [currentTheme, setCurrentTheme] = useState("light");
+  const [currentTheme, setCurrentTheme] = useState("dark");
 
   const toggleTheme = () => {
     setCurrentTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));

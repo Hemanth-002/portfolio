@@ -4,7 +4,7 @@ import { LiaBookSolid } from "react-icons/lia";
 import { AiOutlineLink } from "react-icons/ai";
 
 const CardWrapper = styled.div`
-  width: 30rem;
+  max-width: 30rem;
   min-height: 10rem;
   border: 3px solid #2a3036;
   border-radius: 1rem;

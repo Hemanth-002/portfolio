@@ -48,7 +48,7 @@ export const SubText = styled.div`
 
 const Hero = () => {
   return (
-    <Wrapper>
+    <Wrapper id="about">
       <Title>
         <p>Hemanth Savaram</p>
         <SubTitle>Full Stack Developer</SubTitle>

@@ -15,7 +15,8 @@ export const ProfileWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  p,a {
+  p,
+  a {
     margin: 0;
   }
 `;
@@ -38,7 +39,7 @@ const Company = styled.a`
 
 const Experience = () => {
   return (
-    <SubWrapper>
+    <SubWrapper id="experience">
       <h2>Work Experience</h2>
       {experience?.map((e) => (
         <ExpWrapper key={e.id}>

@@ -4,11 +4,15 @@ import { styled } from "styled-components";
 import Card from "./Card";
 
 const Wrapper = styled.div`
+  margin: 2rem 4rem;
+`;
+
+const SubWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
-  padding: 0 8rem;
+  flex-wrap: wrap;
+  justify-content: space-around;
   gap: 3rem;
-  margin: 1rem 1rem;
+  padding: 0 2rem;
 
   @media (max-width: 768px) {
     padding: 0 3rem;
@@ -18,10 +22,13 @@ const Wrapper = styled.div`
 
 const Projects = () => {
   return (
-    <Wrapper>
-      {projects?.map((item, idx) => (
-        <Card data={item} key={idx} />
-      ))}
+    <Wrapper id="projects">
+      <h2>Projects</h2>
+      <SubWrapper>
+        {projects?.map((item, idx) => (
+          <Card data={item} key={idx} />
+        ))}
+      </SubWrapper>
     </Wrapper>
   );
 };
