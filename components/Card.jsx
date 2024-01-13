@@ -22,7 +22,7 @@ const Title = styled.span`
   }
 `;
 
-const Name = styled.p`
+export const Name = styled.p`
   color: #3081f7;
   font-weight: 800;
   font-size: 1.5rem;

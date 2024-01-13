@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import styled from "styled-components";
-import startCase from "lodash/startCase";
 import { links } from "@/constants/skills";
 
 const Wrapper = styled.div`
@@ -26,7 +25,7 @@ const Link = ({ href, target, rel, children }) => (
     {children}
   </SubText>
 );
-const ImageWrap = ({ src, alt, width, height }) => (
+export const ImageWrap = ({ src, alt, width, height }) => (
   <Image src={src} alt={alt} width={width} height={height} />
 );
 
@@ -38,7 +37,7 @@ const Component = ({ link }) => (
       width={link.width}
       height={link.height}
     />
-    <p>{startCase(link.alt)}</p>
+    {/* <p>{startCase(link.alt)}</p> */}
   </Link>
 );
 

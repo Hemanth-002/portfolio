@@ -30,7 +30,7 @@ const SubTitle = styled.div`
   color: ${(props) => props.theme.colors.subText};
 `;
 
-const SubText = styled.div`
+export const SubText = styled.div`
   display: flex;
   width: calc(100% / 3);
   flex-direction: column;

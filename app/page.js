@@ -15,6 +15,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 1rem;
     padding: 0;
     font-family: 'Kumbh Sans Variable', sans-serif;
+    letter-spacing: 0.2px;
     font-size: 16px;
     transition: background 0.5s ease, color 0.3s ease;
     background: ${(props) => props.theme.colors.background};
