@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { experience } from "@/constants/experience";
+import { education } from "@/constants/education";
 import { ImageWrap, SubWrapper } from "./Skills";
 import { Name } from "./Card";
 import Link from "next/link";
@@ -15,13 +15,10 @@ export const ProfileWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  p,a {
+  p,
+  a {
     margin: 0;
   }
-`;
-
-const Description = styled.p`
-  width: calc(100% / 1.5);
 `;
 
 const SubTitle = styled.p`
@@ -29,30 +26,24 @@ const SubTitle = styled.p`
   color: ${(props) => props.theme.colors.subText};
 `;
 
-const Company = styled.a`
-  text-decoration: none;
-  font-weight: 600;
-  margin-top: 0.5rem;
-  color: inherit;
-`;
-
-const Experience = () => {
+const Education = () => {
   return (
     <SubWrapper>
-      <h2>Work Experience</h2>
-      {experience?.map((e) => (
+      <h2>Education</h2>
+      {education?.map((e) => (
         <ExpWrapper key={e.id}>
-          <Link href={e.companyLink} target="_blank" rel="noreferrer">
+          <Link href={e.schoolLink} target="_blank" rel="noreferrer">
             <ImageWrap src={e.image} width="86" height="86" alt={e.alt} />
           </Link>
           <ProfileWrapper>
-            <Name>{e?.role}</Name>
-            <Company href={e.companyLink} target="_blank">
-              {e?.company}
-            </Company>
+            <Name>
+              <Link href={e.schoolLink} target="_blank" rel="noreferrer">
+                {e?.school}
+              </Link>
+            </Name>
+            <p>{e?.department}</p>
             <SubTitle>{e?.period}</SubTitle>
-            <p>{e?.skills}</p>
-            <Description>{e?.description}</Description>
+            <p>Grade: {e?.grade}</p>
           </ProfileWrapper>
         </ExpWrapper>
       ))}
@@ -60,4 +51,4 @@ const Experience = () => {
   );
 };
 
-export default Experience;
+export default Education;

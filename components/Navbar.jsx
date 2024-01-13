@@ -39,20 +39,24 @@ const ListBar = styled.div`
 
 const Title = styled.a`
   display: flex;
+  text-decoration: none;
+  color: inherit;
   cursor: pointer;
   gap: 0.25rem;
 `;
-
 const Navbar = ({ theme, toggleTheme }) => {
   return (
     <Wrapper>
       <SubWrapper>
         <FaGithub size={60} />
         <ListBar>
-          <Title>
+          <Title
+            href="https://www.linkedin.com/in/hemanthsairam/"
+            target="_blank"
+          >
             <AiFillLinkedin size={40} />
           </Title>
-          <Title>
+          <Title href="https://leetcode.com/Humanth/" target="_blank">
             <SiLeetcode size={35} />
           </Title>
           <Title onClick={() => toggleTheme()}>

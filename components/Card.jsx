@@ -27,6 +27,10 @@ export const Name = styled.p`
   font-weight: 800;
   font-size: 1.5rem;
   margin: 0;
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 `;
 
 const TechStack = styled.p`
