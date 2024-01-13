@@ -6,13 +6,15 @@ import { Navbar, Footer } from "@/components";
 import Contibutions from "@/components/Contibutions";
 import Projects from "@/components/Projects";
 import { useState } from "react";
+import Skills from "@/components/Skills";
+import Experience from "@/components/Experience";
 
 const GlobalStyle = createGlobalStyle`
   html,
   body {
     margin: 1rem;
     padding: 0;
-    font-family: Open-Sans, Helvetica, Sans-Serif;
+    font-family: 'Kumbh Sans Variable', sans-serif;
     font-size: 16px;
     transition: background 0.5s ease, color 0.3s ease;
     background: ${(props) => props.theme.colors.background};
@@ -31,8 +33,8 @@ const theme = {
       background: "#FFFDF9",
       text: "#36313D",
       subText: "#646262",
-      buttonColor: '#555',
-      buttonText: '#ffffff',
+      buttonColor: "#555",
+      buttonText: "#ffffff",
       persianGreen: "#06B49A",
       lightBlue: "#AFDBD2",
       onyx: "#36313D",
@@ -76,6 +78,8 @@ export default function Home() {
         <Hero />
         <Contibutions />
         <Projects />
+        <Skills />
+        <Experience />
         <Footer />
         <GlobalStyle />
       </ThemeProvider>
