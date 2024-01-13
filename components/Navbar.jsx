@@ -37,7 +37,7 @@ const ListBar = styled.div`
   padding-bottom: 0.5rem;
 `;
 
-const Title = styled.a`
+export const Title = styled.a`
   display: flex;
   text-decoration: none;
   color: inherit;
@@ -55,6 +55,9 @@ const Navbar = ({ theme, toggleTheme }) => {
             target="_blank"
           >
             <AiFillLinkedin size={40} />
+          </Title>
+          <Title href="https://github.com/Hemanth-002/" target="_blank">
+            <FaGithub size={40} />
           </Title>
           <Title href="https://leetcode.com/Humanth/" target="_blank">
             <SiLeetcode size={35} />

@@ -8,7 +8,8 @@ export const experience = [
     skills:
       "Skills: Next.js · Keystone · TypeScript · Elasticsearch · GraphQL · Node.js · React.js · JavaScript",
     image: "./fullness.svg",
-    description: "",
+    description:
+      "Currently working for a leading Australian Energy Company specializing in the comparison of various financial products. Contributed to the development of technology for a comparison website aimed at serving a broad audience. Utilized KeystoneJS as a content management system (CMS) and integrated it with Elasticsearch to facilitate seamless querying through GraphQL. Additionally, designed and implemented the frontend using React and Next.js.",
   },
   {
     id: 1,
