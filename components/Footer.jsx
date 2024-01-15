@@ -19,6 +19,9 @@ const Wrapper = styled.div`
   h2 {
     margin: 0;
   }
+  h2 {
+    margin-top: 1rem;
+  }
   @media (max-width: 768px) {
     padding: 0 3rem;
     flex-direction: column;

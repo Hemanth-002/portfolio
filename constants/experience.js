@@ -3,7 +3,8 @@ export const experience = [
     id: 2,
     company: "Fullness Web Solutions",
     period: "Dec 2022 - present . 1 yr 2 mos",
-    companyLink: "https://www.linkedin.com/company/byjus/",
+    companyLink:
+      "https://www.linkedin.com/company/fullness-web-solutions/mycompany/",
     role: "Software Engineer",
     skills:
       "Skills: Next.js · Keystone · TypeScript · Elasticsearch · GraphQL · Node.js · React.js · JavaScript",
@@ -16,8 +17,8 @@ export const experience = [
     company: "BYJUS",
     period: "July 2022 - Nov 2022 . 5 mos",
     role: "Software Engineer",
-    companyLink:
-      "https://www.linkedin.com/company/fullness-web-solutions/mycompany/",
+    companyLink: "https://www.linkedin.com/company/byjus/",
+
     skills: "Node.js · PHP · JavaScript",
     image: "./byjus.svg",
     description: `Worked in Website Tech team, where I worked on byjus.com and

@@ -24,6 +24,9 @@ const Wrapper = styled.div`
     padding: 0 3rem;
     flex-direction: column;
   }
+  @media (max-width: 435px) {
+    display: none;
+  }
 `;
 
 const SubWrapper = styled.div`
@@ -36,6 +39,17 @@ const ListBar = styled.div`
   gap: 2.5rem;
   flex-direction: row;
   padding-bottom: 0.5rem;
+  @media (max-width: 768px) {
+    .menu-list {
+      display: none;
+    }
+  }
+`;
+
+const MenuList = styled(ListBar)`
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 export const ScrollTitle = styled(ScrollLink)`
@@ -81,7 +95,7 @@ const Navbar = ({ theme, toggleTheme }) => {
           </Title>
         </ListBar>
       </SubWrapper>
-      <ListBar>
+      <MenuList>
         <ScrollTitle to="about" smooth={true} duration={500}>
           <FiBookOpen size={20} />
           About
@@ -107,7 +121,7 @@ const Navbar = ({ theme, toggleTheme }) => {
           <BiPhoneCall size={20} />
           Get in touch
         </ScrollTitle>
-      </ListBar>
+      </MenuList>
     </Wrapper>
   );
 };

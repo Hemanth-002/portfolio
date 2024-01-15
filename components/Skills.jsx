@@ -1,10 +1,11 @@
-import React from "react";
+import { startCase } from "lodash";
 import Image from "next/image";
 import styled from "styled-components";
 import { links } from "@/constants/skills";
 
 const Wrapper = styled.div`
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
   gap: 1rem;
@@ -37,7 +38,7 @@ const Component = ({ link }) => (
       width={link.width}
       height={link.height}
     />
-    {/* <p>{startCase(link.alt)}</p> */}
+    <p>{startCase(link.alt)}</p>
   </Link>
 );
 

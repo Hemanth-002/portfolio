@@ -1,4 +1,3 @@
-import React from "react";
 import { styled } from "styled-components";
 
 const ImageWrapper = styled.div`
@@ -10,7 +9,10 @@ const ImageWrapper = styled.div`
 
 const Image = styled.img`
   min-height: 10rem;
-  padding: 0 7rem;
+
+  @media (min-width: 768px) {
+    padding: 0 7rem;
+  }
   @media (max-width: 768px) {
     padding: 0;
   }

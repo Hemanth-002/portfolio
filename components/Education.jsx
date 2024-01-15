@@ -1,14 +1,17 @@
 import styled from "styled-components";
+import Link from "next/link";
 import { education } from "@/constants/education";
 import { ImageWrap, SubWrapper } from "./Skills";
 import { Name } from "./Card";
-import Link from "next/link";
 
 export const ExpWrapper = styled.div`
   display: flex;
   flex-direction: row;
   margin-top: 1.5rem;
   gap: 1rem;
+  @media (max-width: 435px) {
+    flex-wrap: wrap;
+  }
 `;
 
 export const ProfileWrapper = styled.div`
