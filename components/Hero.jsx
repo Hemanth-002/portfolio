@@ -58,7 +58,7 @@ const Hero = () => {
           Full Stack Developer with expertise in React, Node.js, and database
           management.
         </p>
-        <CustomButton title={"Download Resume"} />
+        {/* <CustomButton title={"Download Resume"} /> */}
       </SubText>
     </Wrapper>
   );

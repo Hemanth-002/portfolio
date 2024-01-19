@@ -2,8 +2,13 @@
 const nextConfig = {
   output: "export",
   basePath: "",
+  reactStrictMode: true,
+  swcMinify: true,
   images: {
     unoptimized: true,
+  },
+  compiler: {
+    styledComponents: true,
   },
 };
 
