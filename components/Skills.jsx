@@ -14,9 +14,15 @@ const Wrapper = styled.div`
 
 export const SubWrapper = styled.div`
   margin: 4rem 4rem;
+  @media (max-width: 435px) {
+    margin: 3rem 1.5rem;
+  }
 `;
 
 export const SubText = styled.a`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-decoration: none;
   color: inherit;
 `;
@@ -26,8 +32,28 @@ const Link = ({ href, target, rel, children }) => (
     {children}
   </SubText>
 );
-export const ImageWrap = ({ src, alt, width, height }) => (
-  <Image src={src} alt={alt} width={width} height={height} />
+
+const StyledImage = styled(Image)`
+  @media (max-width: 435px) {
+    height: 4.5rem;
+    width: 4.5rem;
+  }
+`;
+
+export const ImageWrap = ({
+  src,
+  alt,
+  width = "72",
+  height = "72",
+  bgColor,
+}) => (
+  <StyledImage
+    src={src}
+    alt={alt}
+    width={width}
+    height={height}
+    style={{ backgroundColor: bgColor ?? null, padding: "0.25rem " }}
+  />
 );
 
 const Component = ({ link }) => (
@@ -35,8 +61,7 @@ const Component = ({ link }) => (
     <ImageWrap
       src={link.src}
       alt={link.alt}
-      width={link.width}
-      height={link.height}
+      bgColor={link.bgColor}
     />
     <p>{startCase(link.alt)}</p>
   </Link>

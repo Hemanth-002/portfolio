@@ -36,7 +36,7 @@ const Education = () => {
       {education?.map((e) => (
         <ExpWrapper key={e.id}>
           <Link href={e.schoolLink} target="_blank" rel="noreferrer">
-            <ImageWrap src={e.image} width="86" height="86" alt={e.alt} />
+            <ImageWrap src={e.image} width="80" height="80" alt={e.alt} />
           </Link>
           <ProfileWrapper>
             <Name>

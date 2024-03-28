@@ -50,7 +50,7 @@ const Experience = () => {
       {experience?.map((e) => (
         <ExpWrapper key={e.id}>
           <Link href={e.companyLink} target="_blank" rel="noreferrer">
-            <ImageWrap src={e.image} width="86" height="86" alt={e.alt} />
+            <ImageWrap src={e.image} width="80" height="80" alt={e.alt} />
           </Link>
           <ProfileWrapper>
             <Name>{e?.role}</Name>

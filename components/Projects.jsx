@@ -17,7 +17,7 @@ const SubWrapper = styled.div`
   padding: 0 2rem;
 
   @media (max-width: 768px) {
-    padding: 0 3rem;
+    padding: 0 1.5rem;
     flex-direction: column;
   }
 `;

@@ -1,7 +1,7 @@
 export const experience = [
   {
     id: 2,
-    company: "Fullness Web Solutions",
+    company: "Fullness",
     period: "Dec 2022 - present . 1 yr 2 mos",
     companyLink:
       "https://www.linkedin.com/company/fullness-web-solutions/mycompany/",
