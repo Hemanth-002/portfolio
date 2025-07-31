@@ -1,4 +1,5 @@
 export const links = [
+  // Frontend Technologies
   {
     href: "https://www.w3.org/html/",
     src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg",
@@ -30,6 +31,7 @@ export const links = [
     alt: "nextjs",
     bgColor: 'white',
   },
+  // Backend Technologies
   {
     href: "https://nodejs.org",
     src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg",
@@ -43,19 +45,20 @@ export const links = [
     bgColor: 'white',
   },
   {
-    href: "https://www.elastic.co",
-    src: "https://www.vectorlogo.zone/logos/elastic/elastic-icon.svg",
-    alt: "elasticsearch",
+    href: "https://graphql.org",
+    src: "https://www.vectorlogo.zone/logos/graphql/graphql-icon.svg",
+    alt: "graphql",
   },
   {
     href: "https://keystonejs.com/",
     src: "./keystonejs.svg",
     alt: "keystone",
   },
+  // Databases
   {
-    href: "https://graphql.org",
-    src: "https://www.vectorlogo.zone/logos/graphql/graphql-icon.svg",
-    alt: "graphql",
+    href: "https://www.elastic.co",
+    src: "https://www.vectorlogo.zone/logos/elastic/elastic-icon.svg",
+    alt: "elasticsearch",
   },
   {
     href: "https://www.mongodb.com/",
@@ -71,5 +74,22 @@ export const links = [
     href: "https://www.postgresql.org",
     src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg",
     alt: "postgresql",
+  },
+  // Programming Languages
+  {
+    href: "https://www.python.org",
+    src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg",
+    alt: "python",
+  },
+  // Testing & DevOps
+  {
+    href: "https://playwright.dev",
+    src: "./playwright.svg",
+    alt: "playwright",
+  },
+  {
+    href: "https://www.docker.com",
+    src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg",
+    alt: "docker",
   },
 ];

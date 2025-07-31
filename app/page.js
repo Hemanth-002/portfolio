@@ -81,9 +81,9 @@ export default function Home() {
         <Navbar toggleTheme={toggleTheme} theme={currentTheme} />
         <Hero />
         <Contibutions />
-        <Projects />
-        <Skills />
         <Experience />
+        <Skills />
+        <Projects />
         <Education />
         <Footer />
         <GlobalStyle />

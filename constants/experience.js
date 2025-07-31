@@ -1,30 +1,32 @@
 export const experience = [
   {
-    id: 2,
-    company: "Fullness",
-    period: "Dec 2022 - present . 1 yr 2 mos",
-    companyLink:
-      "https://www.linkedin.com/company/fullness-web-solutions/mycompany/",
-    role: "Software Engineer",
-    skills:
-      "Skills: Next.js · Keystone · TypeScript · Elasticsearch · GraphQL · Node.js · React.js · JavaScript",
-    image: "./fullness.svg",
-    description:
-      "Currently working for a leading Australian Energy Company specializing in the comparison of various financial products. Contributed to the development of technology for a comparison website aimed at serving a broad audience. Utilized KeystoneJS as a content management system (CMS) and integrated it with Elasticsearch to facilitate seamless querying through GraphQL. Additionally, designed and implemented the frontend using React and Next.js.",
+    id: 1,
+    company: "Avalara",
+    period: "Feb 2025 - Present",
+    companyLink: "https://www.avalara.com/",
+    role: "Software Development Engineer II",
+    skills: "Node.js · TypeScript · Playwright · Temporal · Design Patterns · SOLID Principles",
+    image: "./avalara.jpeg",
+    description: "Working on temporal workflows to orchestrate service provisioning and deprovisioning using Node.js with Design Patterns and SOLID principles. Previously reworked UI tools and learned Playwright for testing, integrating tests into CI/CD pipeline. Fixed JWKS function caching issue to reduce API calls.",
   },
   {
-    id: 1,
+    id: 2,
+    company: "Fullness",
+    period: "Dec 2022 - Feb 2025 (2 years 3 months)",
+    companyLink: "https://www.linkedin.com/company/fullness-web-solutions/mycompany/",
+    role: "Software Development Engineer",
+    skills: "Next.js · TypeScript · OAuth · Google Calendar API · Cloudflare Workers · Redis · Keystone.js · Elasticsearch · GraphQL · Node.js · React.js · LaTeX",
+    image: "./fullness.svg",
+    description: "Led development of slot booking microservice with OAuth authentication and Google Calendar integration for scheduling, including automated Meet link generation. Created custom-configured user onboarding flow, reducing code complexity. Integrated Cloudflare Workers to optimize backend processes, resulting in 30% reduction in response time. Built real-time analytics dashboard in Next.js for tracking clicks and engagement metrics, increasing user retention by 25%. Worked with leading Australian energy comparison platform serving 10,000+ users daily. Built cost-effective OTP microservice using Plivo/Twilio with Redis caching. Streamlined product capture system reducing vertical launch time from 3 months to 2 weeks. Utilized Keystone.js as headless CMS with Elasticsearch integration. Optimized GraphQL queries and Elasticsearch indexing, improving response times by 30%. Developed theme engine with styled-components for multiple branded websites. Enhanced collaboration with QA Console for lead validation.",
+  },
+  {
+    id: 3,
     company: "BYJUS",
-    period: "July 2022 - Nov 2022 . 5 mos",
+    period: "July 2022 - Nov 2022 (5 months)",
     role: "Software Engineer",
     companyLink: "https://www.linkedin.com/company/byjus/",
-
-    skills: "Node.js · PHP · JavaScript",
+    skills: "Node.js · PHP · JavaScript · WordPress",
     image: "./byjus.svg",
-    description: `Worked in Website Tech team, where I worked on byjus.com and
-    created Tools in Wordpress using PHP to add floaters across
-    website
-    Also I have created APIs in Nodejs for several pages. Helped in
-    enhancement various pages in the byjus.com website.`,
+    description: "Worked in Website Tech team on byjus.com, creating WordPress tools using PHP to add floaters across website. Developed APIs in Node.js for various pages and enhanced multiple pages on the byjus.com website.",
   },
 ];

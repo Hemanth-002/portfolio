@@ -10,15 +10,15 @@ const Wrapper = styled.div`
 `;
 
 const SubWrapper = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   gap: 3rem;
   padding: 0 2rem;
 
   @media (max-width: 768px) {
     padding: 0 1.5rem;
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 `;
 

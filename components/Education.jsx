@@ -40,9 +40,7 @@ const Education = () => {
           </Link>
           <ProfileWrapper>
             <Name>
-              <Link href={e.schoolLink} target="_blank" rel="noreferrer">
                 {e?.school}
-              </Link>
             </Name>
             <p>{e?.department}</p>
             <SubTitle>{e?.period}</SubTitle>
