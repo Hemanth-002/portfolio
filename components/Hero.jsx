@@ -158,7 +158,7 @@ const CodeBlock = styled.div`
 
 const Hero = () => {
   const [text, setText] = useState("");
-  const fullText = "Full Stack Developer";
+  const fullText = "Software Developer";
 
   useEffect(() => {
     let index = 0;
@@ -184,8 +184,9 @@ const Hero = () => {
           <Cursor />
         </Role>
         <Description>
-          I build accessible, pixel-perfect, performant, and secure web
-          applications. Expert in React, Node.js, and modern web technologies.
+          I craft robust, scalable, and high-performance software solutions.
+          Passionate about solving complex problems across web, mobile, and
+          cloud ecosystems.
         </Description>
         <ButtonGroup>
           <CustomButton

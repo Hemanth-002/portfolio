@@ -29,20 +29,32 @@ export const links = [
     href: "https://nextjs.org/",
     src: "https://cdn.worldvectorlogo.com/logos/nextjs-2.svg",
     alt: "nextjs",
-    bgColor: 'white',
+    bgColor: "white",
+  },
+  // Mobile Development
+  {
+    href: "https://reactnative.dev/",
+    src: "https://reactnative.dev/img/header_logo.svg",
+    alt: "react native",
+  },
+  {
+    href: "https://expo.dev/",
+    src: "",
+    alt: "expo",
+    bgColor: "white",
   },
   // Backend Technologies
   {
     href: "https://nodejs.org",
     src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg",
     alt: "nodejs",
-    bgColor: 'white',
+    bgColor: "white",
   },
   {
     href: "https://expressjs.com",
     src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg",
     alt: "express",
-    bgColor: 'white',
+    bgColor: "white",
   },
   {
     href: "https://graphql.org",
@@ -81,7 +93,13 @@ export const links = [
     src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg",
     alt: "python",
   },
-  // Testing & DevOps
+  // Cloud, Testing & DevOps
+  {
+    href: "https://aws.amazon.com/",
+    src: "https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
+    alt: "aws",
+    bgColor: "white",
+  },
   {
     href: "https://playwright.dev",
     src: "./playwright.svg",
