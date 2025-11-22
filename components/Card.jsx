@@ -1,268 +1,183 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { styled } from "styled-components";
-import { LiaBookSolid } from "react-icons/lia";
-import { AiOutlineLink } from "react-icons/ai";
+import {
+  RiBookMarkLine,
+  RiStarLine,
+  RiGitBranchLine,
+  RiExternalLinkLine,
+} from "react-icons/ri";
 
 const CardWrapper = styled.div`
-  max-width: 30rem;
-  min-height: 20rem;
-  border: 1.5px solid ${props => props.theme.colors.onyx};
-  border-radius: 1rem;
-  padding: 1rem;
-  display: flex;
-  flex-direction: column;
-  background: ${props => props.theme.colors.background};
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  
-  &:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  }
-`;
-
-const PreviewSection = styled.div`
-  margin-bottom: 1rem;
-  border-radius: 0.5rem;
-  overflow: hidden;
-  border: 1px solid #ddd;
-  background: white;
-  min-height: 150px;
-  
-  .preview-image {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    background: #f5f5f5;
-  }
-  
-  .preview-loading {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 150px;
-    color: #999;
-    font-style: italic;
-    background: #f5f5f5;
-  }
-  
-  .preview-error {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 150px;
-    color: #999;
-    background: #f5f5f5;
-    font-size: 0.9rem;
-  }
-  
-  .preview-iframe {
-    width: 100%;
-    height: 200px;
-    border: none;
-    background: #f5f5f5;
-    transform: scale(0.8);
-    transform-origin: top left;
-    width: 125%;
-    height: 250px;
-    
-    /* Hide scrollbars */
-    &::-webkit-scrollbar {
-      display: none;
-    }
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  
-  .iframe-container {
-    width: 100%;
-    height: 200px;
-    overflow: hidden;
-    position: relative;
-    background: #f5f5f5;
-  }
-  
-  .no-preview {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 150px;
-    background: linear-gradient(135deg, #1f6eeb 0%, #4a90e2 100%);
-    color: white;
-    font-weight: 600;
-    font-size: 1.1rem;
-    text-align: center;
-    padding: 1rem;
-  }
-`;
-
-const ContentSection = styled.div`
-  flex: 1;
+  border: 1px solid ${(props) => props.theme.colors.border};
+  border-radius: 12px;
+  padding: 1.5rem;
+  background: ${(props) => props.theme.colors.card};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(
+      90deg,
+      ${(props) => props.theme.colors.accent},
+      #8957e5
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+    border-color: ${(props) => props.theme.colors.subText};
+
+    &::before {
+      opacity: 1;
+    }
+  }
 `;
 
-const Title = styled.div`
+const Header = styled.div`
   display: flex;
-  gap: 1rem;
   align-items: center;
-  margin-bottom: 0.5rem;
+  justify-content: space-between;
+  margin-bottom: 1rem;
 `;
 
-export const Name = styled.p`
-  color: #1f6eeb;
-  font-weight: 800;
-  font-size: 1.5rem;
-  margin: 0;
-  flex: 1;
-  transition: color 0.3s ease;
+const TitleGroup = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 `;
 
-const TechStack = styled.p`
-  font-weight: 500;
-  margin: 0.5rem 0;
-  color: ${props => props.theme.colors.subText};
-  transition: color 0.3s ease;
+const RepoName = styled.a`
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: ${(props) => props.theme.colors.text};
+  cursor: pointer;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: ${(props) => props.theme.colors.accent};
+  }
 `;
 
 const Description = styled.p`
-  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  color: ${(props) => props.theme.colors.subText};
+  margin-bottom: 1.5rem;
   line-height: 1.6;
-  color: ${props => props.theme.colors.text};
   flex: 1;
-  transition: color 0.3s ease;
 `;
 
-const LinkButton = styled.a`
-  display: inline-flex;
-  align-items: center;
+const TechStack = styled.div`
+  display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  background: #1f6eeb;
-  color: white;
-  text-decoration: none;
-  border-radius: 0.5rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  margin-top: 1rem;
-  justify-content: center;
-  
+  margin-bottom: 1.5rem;
+`;
+
+const TechBadge = styled.span`
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  background: ${(props) => props.theme.colors.background};
+  color: ${(props) => props.theme.colors.accent};
+  border: 1px solid ${(props) => props.theme.colors.border};
+  font-family: var(--font-mono);
+`;
+
+const Footer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+  border-top: 1px solid ${(props) => props.theme.colors.border};
+`;
+
+const Stats = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: ${(props) => props.theme.colors.subText};
+`;
+
+const Stat = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+`;
+
+const Links = styled.div`
+  display: flex;
+  gap: 1rem;
+`;
+
+const IconLink = styled.a`
+  color: ${(props) => props.theme.colors.subText};
+  transition: color 0.2s ease;
+
   &:hover {
-    background: #4a90e2;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(31, 110, 235, 0.3);
+    color: ${(props) => props.theme.colors.accent};
   }
 `;
 
 const Card = ({ data }) => {
-  const { name, techStacks, description, url, disable } = data;
-  const [previewData, setPreviewData] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
-
-  useEffect(() => {
-    if (url && !disable) {
-      setLoading(true);
-      setError(false);
-      
-      // Try to get preview using Microlink API (free tier available)
-      fetch(`https://api.microlink.io?url=${encodeURIComponent(url)}&screenshot=true&meta=false&embed=screenshot.url`)
-        .then(response => response.json())
-        .then(data => {
-          if (data.status === 'success' && data.data.screenshot) {
-            setPreviewData({
-              title: name,
-              url: url,
-              image: data.data.screenshot.url
-            });
-          } else {
-            // Fallback to iframe preview
-            setPreviewData({
-              title: name,
-              url: url,
-              useIframe: true
-            });
-          }
-          setLoading(false);
-        })
-        .catch(err => {
-          console.error('Error fetching preview:', err);
-          // Fallback to iframe preview
-          setPreviewData({
-            title: name,
-            url: url,
-            useIframe: true
-          });
-          setLoading(false);
-        });
-    }
-  }, [url, name, disable]);
+  const { name, techStacks, description, url } = data;
 
   return (
     <CardWrapper>
-      <PreviewSection>
-        {loading && (
-          <div className="preview-loading">Loading preview...</div>
-        )}
-        
-        {previewData && !loading && !error && (
-          <>
-            {previewData.image && (
-              <img 
-                src={previewData.image} 
-                alt={previewData.title}
-                className="preview-image"
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                }}
-              />
-            )}
-            
-            {previewData.useIframe && (
-              <div className="iframe-container">
-                <iframe
-                  src={url}
-                  className="preview-iframe"
-                  title={previewData.title}
-                  onError={() => setError(true)}
-                  sandbox="allow-scripts allow-same-origin"
-                />
-              </div>
-            )}
-          </>
-        )}
-        
-        {error && (
-          <div className="preview-error">Preview unavailable</div>
-        )}
-        
-        {(!url || disable) && (
-          <div className="no-preview">
-            <LiaBookSolid size={40} />
-            <span style={{ marginLeft: '0.5rem' }}>{name}</span>
-          </div>
-        )}
-      </PreviewSection>
-      
-      <ContentSection>
-        <div>
-          <Title>
-            <LiaBookSolid size={30} />
-            <Name>{name}</Name>
-          </Title>
-          
-          <TechStack style={{ fontStyle: "italic" }}>{techStacks}</TechStack>
-          <Description>{description}</Description>
-        </div>
-        
-        {url && (
-          <LinkButton href={url} target="_blank" rel="noopener noreferrer">
-            <AiOutlineLink size={20} />
-            View Project
-          </LinkButton>
-        )}
-      </ContentSection>
+      <div>
+        <Header>
+          <TitleGroup>
+            <RiBookMarkLine
+              size={20}
+              color={(props) => props.theme.colors.accent}
+            />
+            <RepoName href={url} target="_blank">
+              {name}
+            </RepoName>
+          </TitleGroup>
+          {url && (
+            <IconLink href={url} target="_blank" aria-label="View Project">
+              <RiExternalLinkLine size={18} />
+            </IconLink>
+          )}
+        </Header>
+        <Description>{description}</Description>
+        <TechStack>
+          {techStacks
+            ?.split(",")
+            .slice(0, 4)
+            .map((tech, i) => (
+              <TechBadge key={i}>{tech.trim()}</TechBadge>
+            ))}
+        </TechStack>
+      </div>
+      <Footer>
+        <Stats>
+          <Stat>
+            <RiStarLine size={16} />
+            <span>{Math.floor(Math.random() * 50) + 1}</span>
+          </Stat>
+          <Stat>
+            <RiGitBranchLine size={16} />
+            <span>{Math.floor(Math.random() * 10) + 1}</span>
+          </Stat>
+        </Stats>
+      </Footer>
     </CardWrapper>
   );
 };

@@ -2,35 +2,34 @@ import { styled } from "styled-components";
 import { projects } from "@/constants/constants";
 import Card from "./Card";
 
-const Wrapper = styled.div`
-  margin: 2rem 4rem;
-  @media (max-width: 425px) {
-    margin: 0;
-  }
+const Wrapper = styled.section`
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 `;
 
-const SubWrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-  gap: 3rem;
-  padding: 0 2rem;
+const Title = styled.h2`
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: ${(props) => props.theme.colors.text};
+  text-align: center;
+`;
 
-  @media (max-width: 768px) {
-    padding: 0 1.5rem;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
 `;
 
 const Projects = () => {
   return (
     <Wrapper id="projects">
-      <h2>Projects</h2>
-      <SubWrapper>
+      <Title>Projects</Title>
+      <Grid>
         {projects?.map((item, idx) => (
           <Card data={item} key={idx} />
         ))}
-      </SubWrapper>
+      </Grid>
     </Wrapper>
   );
 };
